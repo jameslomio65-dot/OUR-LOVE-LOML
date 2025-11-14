@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Special Memories ❤️</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Optional: Add a favicon -->
+    <link rel="icon" href="images/heart_favicon.png" type="image/png">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>For My Amazing Girlfriend ❤️</h1>
+            <p>A collection of our beautiful memories, just for you.</p>
+        </header>
+
+        <nav>
+            <a href="#" class="nav-item" id="welcomeNav">Home 🏡</a>
+            <a href="#" class="nav-item" id="galleryNav">Our Photos 📸</a>
+            <a href="#" class="nav-item" id="storyNav">Our Story 📜</a>
+            <a href="#" class="nav-item" id="momentsNav">Favorite Moments ✨</a>
+            <a href="#" class="nav-item" id="playlistNav">Our Playlist 🎶</a>
+        </nav>
+
+        <main id="main-content">
+            <!-- Password Screen (Initially visible) -->
+            <div id="password-screen" class="screen">
+                <h2>Hey gorgeous, what's the magic word? ❤️</h2>
+                <input type="password" id="magicWordInput" placeholder="******">
+                <button id="enterButton">Enter</button>
+                <p id="errorMessage" class="error-message"></p>
+            </div>
+
+            <!-- Welcome Screen (Shown after correct password) -->
+            <div id="welcome-screen" class="screen hidden">
+                <h2>Welcome, My Love! 🥰</h2>
+                <img src="images/welcome_pic.jpg" alt="Our Special Memory" class="welcome-image">
+                <p class="welcome-message">Every moment with you is a treasure. This space is dedicated to all the beautiful memories we've created together, and many more to come!</p>
+                <button id="exploreMemoriesButton">Explore Our Memories</button>
+                <div class="heart-animation"></div>
+                <div class="heart-animation delay-1"></div>
+                <div class="heart-animation delay-2"></div>
+                <div class="heart-animation delay-3"></div>
+            </div>
+
+            <!-- Photo Gallery Screen (Hidden initially) -->
+            <div id="gallery-screen" class="screen hidden">
+                <h2>Our Photos Together 📸</h2>
+                <p>Scroll through our journey in pictures!</p>
+                <div class="image-grid">
+                    <!-- Replace with your actual image paths -->
+                    <img src="ourpic.jpg" alt="Memory 1">
+                    <img src="bdaymo.jpg" alt="Memory 2">
+                    <img src="our couple pic.jpg" alt="Memory 3">
+                    <img src="our graduation.jpg" alt="Memory 4">
+                    <img src="our first simba.jpg" alt="Memory 5">
+                    <img src="idk.jpg" alt="Memory 6">
+                    <!-- Add more <img> tags as needed -->
+                </div>
+            </div>
+
+            <!-- Our Story Screen (Hidden initially) -->
+            <div id="story-screen" class="screen hidden">
+                <h2>Our Story, Our Journey 📜</h2>
+                <div class="story-timeline">
+                    <div class="timeline-item">
+                        <span class="timeline-date">octorber, 2023</span>
+                        <h3>The Day We Met</h3>
+                        <p>I still remember seeing you for the first time... na may spark na talaga pero still naunahan ako ng takot dahil puro ako kasinungalingan noon sau
+                            pero masaya ako na nagkakilala tau mahal ko ginawa koto para maalala mo ang mga pinagsamahan natin ay sobrang hirap kalimutan
+                        </p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timeline-date">February 14, 2025</span>
+                        <h3>the day na close na tayo</h3>
+                        <p>sobrang saya ko nung naging close tau kahit papano naging maayos nako at sa araw ng mga puso tau naging tau sobrang mahal kita</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timeline-date">june 2025</span>
+                        <h3>eto na ung araw na nag graduate tau</h3>
+                        <p>masaya ako na sabay tau grumaduate pero feel ko ngayon? di na tau gragraduate ng sabay</p>
+                    </div>
+                    <!-- Add more timeline items -->
+                    <div class="timeline-item">
+                        <span class="timeline-date">Today & Always ❤️</span>
+                        <h3>this love will never ends</h3>
+                        <p>alam kong tatapusin mo ang pag aaral mo and sana maging masaya ka sinabi kong di tau sabay gragraduate dahil aalis ako dito sa QC
+                            at papapuntahin ako sa quezon province para magtrabaho at magaral or maybe wala nko.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Favorite Moments Screen (Hidden initially) -->
+            <div id="moments-screen" class="screen hidden">
+                <h2>Favorite Little Moments ✨</h2>
+                <div class="moments-list">
+                    <div class="moment-item">
+                        <span class="moment-icon">🥰</span>
+                        <p>our Favorite moment is that dream.</p>
+                    </div>
+                    <div class="moment-item">
+                        <span class="moment-icon">☕</span>
+                        <p>that dream na mag ka anak taung dalawa and magpakasal</p>
+                    </div>
+                    <div class="moment-item">
+                        <span class="moment-icon">🎬</span>
+                        <p>our watching movies.</p>
+                    </div>
+                    <div class="moment-item">
+                        <span class="moment-icon">💭</span>
+                        <p>naalala mo nung nanonood pa tau ng mga movies best ung kpop demon hunter.</p>
+                    </div>
+                    <!-- Add more moments -->
+                </div>
+            </div>
+
+            <!-- Our Playlist Screen (Hidden initially) -->
+            <div id="playlist-screen" class="screen hidden">
+                <h2>Our Special Playlist 🎶</h2>
+                <p>Songs that remind me of you, us, and our journey.</p>
+                <!-- Example: Embed a Spotify playlist. Replace with your own embed code! -->
+                <iframe style="border-radius:12px" src="https://open.spotify.com/album/3jJ8JEOq8xL9DWum9cMpIq?si=bYzpYePJR4SAVtJrT-xwWQ" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                <p class="playlist-note">Need a new song? Let me know!</p>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

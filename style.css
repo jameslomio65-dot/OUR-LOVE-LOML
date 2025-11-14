@@ -1,0 +1,345 @@
+body {
+    font-family: 'Open Sans', sans-serif; /* A slightly softer font */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    background-color: #ffeef2; /* Lighter pink background */
+    margin: 0;
+    padding-top: 40px;
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: #fff;
+    padding: 30px 40px;
+    border-radius: 20px; /* More rounded */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1); /* Stronger shadow */
+    text-align: center;
+    max-width: 650px; /* Wider container */
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 50px; /* Space from bottom */
+}
+
+header h1 {
+    color: #ff4d88; /* Slightly deeper pink */
+    font-size: 3em;
+    margin-bottom: 5px;
+    font-family: 'Dancing Script', cursive; /* More elegant font */
+}
+
+header p {
+    color: #888;
+    margin-top: 0;
+    font-style: italic;
+    font-size: 1.1em;
+}
+
+nav {
+    background-color: #ffb3c1; /* Soft pink */
+    padding: 12px 0; /* More padding */
+    margin-top: 25px;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap; /* Allow nav items to wrap on smaller screens */
+    justify-content: center; /* Center items */
+    gap: 10px; /* Space between nav items */
+    margin-bottom: 30px;
+}
+
+.nav-item {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.0em; /* Slightly smaller for more items */
+    padding: 8px 18px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border-radius: 20px; /* Pill-shaped nav items */
+}
+
+.nav-item:hover, .nav-item.active {
+    background-color: #ff709b;
+    transform: translateY(-2px);
+}
+
+.screen {
+    padding: 20px 0; /* Add padding inside each screen */
+    display: none;
+    animation: fadeIn 0.5s ease-out; /* Fade in animation for screens */
+}
+.screen:not(.hidden) {
+    display: block;
+}
+#password-screen {
+    display: block;
+}
+
+.screen h2 {
+    color: #ff4d88;
+    font-size: 2.2em;
+    margin-bottom: 25px;
+    font-family: 'Dancing Script', cursive;
+}
+
+input[type="password"] {
+    width: calc(100% - 60px); /* Slightly more space */
+    padding: 15px 25px;
+    margin-bottom: 25px;
+    border: 2px solid #ffc0cb;
+    border-radius: 30px; /* More rounded */
+    font-size: 1.2em;
+}
+
+button {
+    background-color: #ff4d88;
+    color: #fff;
+    border: none;
+    padding: 15px 35px;
+    border-radius: 30px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #e63970;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.error-message {
+    color: #e74c3c;
+    margin-top: 15px;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.error-message.show {
+    opacity: 1;
+}
+.hidden {
+    display: none;
+}
+
+/* Welcome Screen Specifics */
+.welcome-image {
+    max-width: 90%;
+    height: auto;
+    border-radius: 15px;
+    margin: 25px auto;
+    display: block;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.welcome-message {
+    font-size: 1.15em;
+    color: #555;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+#exploreMemoriesButton {
+    background-color: #ff709b; /* Different shade for this button */
+    padding: 18px 40px;
+    font-size: 1.3em;
+}
+#exploreMemoriesButton:hover {
+    background-color: #e04a9b;
+}
+
+
+/* Heart animations (retains previous styles) */
+.heart-animation {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #ffc0cb; /* Lighter heart color */
+    transform: rotate(-45deg);
+    opacity: 0;
+    animation: floatHeart 4s ease-out infinite;
+    z-index: 0;
+}
+.heart-animation::before, .heart-animation::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #ffc0cb;
+    border-radius: 50%;
+}
+.heart-animation::before { top: -10px; left: 0; }
+.heart-animation::after { left: 10px; top: 0; }
+@keyframes floatHeart {
+    0% { transform: translate(0, 0) rotate(-45deg); opacity: 0; left: 50%; bottom: 0; }
+    20% { opacity: 1; }
+    100% { transform: translate(calc(var(--rand-x) * 150px - 75px), -500px) rotate(-45deg); opacity: 0; }
+}
+
+
+/* Gallery Screen Specifics */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); /* Slightly larger images */
+    gap: 18px; /* More space */
+    margin-top: 30px;
+    padding: 15px;
+    background-color: #fff0f5;
+    border-radius: 15px;
+    box-shadow: inset 0 3px 8px rgba(0,0,0,0.07);
+}
+
+.image-grid img {
+    width: 100%;
+    height: 130px; /* Consistent height */
+    object-fit: cover;
+    border-radius: 10px; /* More rounded */
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+}
+.image-grid img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Our Story Screen Specifics (New!) */
+.story-timeline {
+    text-align: left;
+    max-width: 500px;
+    margin: 30px auto;
+    position: relative;
+    padding: 0 20px;
+}
+.story-timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    background-color: #ffc0cb; /* Timeline line color */
+    transform: translateX(-50%);
+    z-index: 0;
+}
+.timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+    padding: 10px 0;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease;
+}
+.timeline-item:nth-child(even) {
+    left: 55%; /* Alternate left/right */
+    text-align: left;
+    margin-left: -15px;
+}
+.timeline-item:nth-child(odd) {
+    right: 55%;
+    text-align: right;
+    margin-right: -15px;
+}
+.timeline-item:hover {
+    transform: translateY(-5px);
+}
+.timeline-item h3 {
+    color: #ff709b;
+    margin: 5px 0;
+    font-size: 1.4em;
+    padding: 0 15px;
+}
+.timeline-item p {
+    color: #666;
+    font-size: 1em;
+    padding: 0 15px 10px;
+}
+.timeline-date {
+    display: block;
+    background-color: #ffb3c1;
+    color: #fff;
+    padding: 5px 15px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    font-weight: bold;
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap; /* Prevent date from wrapping */
+    z-index: 1;
+}
+.timeline-item:nth-child(even) .timeline-date { transform: translateX(-50%) translateY(-10px); }
+.timeline-item:nth-child(odd) .timeline-date { transform: translateX(-50%) translateY(-10px); }
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    width: 12px;
+    height: 12px;
+    background-color: #ff4d88;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    border: 2px solid #fff;
+    z-index: 2;
+}
+
+
+/* Favorite Moments Screen Specifics (New!) */
+.moments-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+.moment-item {
+    background-color: #fff0f5;
+    border-radius: 15px;
+    padding: 20px;
+    flex: 1 1 calc(50% - 30px); 
+    max-width: calc(50% - 30px);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.07);
+    text-align: center;
+    min-width: 220px; 
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.moment-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+.moment-icon {
+    font-size: 2.5em;
+    display: block;
+    margin-bottom: 10px;
+}
+.moment-item p {
+    color: #444;
+    font-size: 1.05em;
+    line-height: 1.5;
+}
+
+/* Playlist Screen Specifics */
+.playlist-note {
+    font-style: italic;
+    color: #777;
+    margin-top: 20px;
+    font-size: 0.9em;
+}
+iframe {
+    margin-top: 20px;
+    width: calc(100% - 20px); 
+}
+
+
+/* Fade In Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Open+Sans:wght@400;600&display=swap');
